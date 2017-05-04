@@ -7,7 +7,7 @@ Enemy::Enemy()
 	position[0] = 0;
 	position[1] = 0;
 	target[0] = 0;
-	target[1] = 1;
+	target[1] = 0;
 }
 
 void Enemy::SetState(tState s)
