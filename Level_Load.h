@@ -2,6 +2,7 @@
 #define LEVEL_LOAD
 #include <string>
 #include <fstream>
+#include <set>
 
 const std::string LEVEL_PATH = "levels.lv";
 
@@ -11,6 +12,8 @@ typedef enum tGame_Element {
 	INTERIOR_WALL, CLOSED_WALL_1_0DEG, CLOSED_WALL_1_90DEG, CLOSED_WALL_1_180DEG, CLOSED_WALL_1_270DEG, PELLET, 
 	POWER_UP, PLAYER, RED_GHOST, BLUE_GHOST, ORANGE_GHOST, PINK_GHOST, CHERRY, PINEAPPLE, ERROR
 };
+
+std::set <tGame_Element> ALLOWED_OBJECTS = { PELLET, POWER_UP, PLAYER, RED_GHOST, BLUE_GHOST, ORANGE_GHOST, PINK_GHOST, CHERRY, PINEAPPLE};
 
 class Level
 {
