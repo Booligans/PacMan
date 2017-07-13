@@ -33,6 +33,4 @@ void SaveAndEncrypt(std::vector <playerData> const& v);
 void DecryptVigenereFile(std::string const & f, std::string & d);
 
 std::string EncryptFile(std::string const& f);
-
-
 #endif
