@@ -9,28 +9,27 @@ struct playerData
 };
 
 class Score {
-public:
-	Score();
+	public:
+		Score();
+		
+		void IncreaseScore(const long long int & value);
 
-	void SetScore(const long long int & value);
-	void IncreaseScore(const long long int & value);
+		int ReturnScore() const;
 
-	int ReturnScore() const;
-
-	~Score();
-private:
-	long long int score;
+		~Score();
+	private:
+		long long int score;
 };
 
 class ScoreObject
 {
-public:
-	ScoreObject();
+	public:
+		ScoreObject();
 
-	~ScoreObject();
+		~ScoreObject();
 
-protected:
-	int value;
+	protected:
+		int value;
 };
 
 class Pellet : ScoreObject
@@ -47,27 +46,27 @@ private:
 
 class Bonus : ScoreObject
 {
-public:
-	Bonus();
+	public:
+		Bonus();
 
-	void Caught(Score s);
+		void Caught(Score s);
 
-	~Bonus();
-private:
-	int value = 150;
+		~Bonus();
+	private:
+		int value = 150;
 };
 
 
 class PowerUp : ScoreObject
 {
-public:
-	PowerUp();
+	public:
+		PowerUp();
 
-	void Caught(Score s);
+		void Caught(Score s);
 
-	~PowerUp();
-private:
-	int value = 50;
+		~PowerUp();
+	private:
+		int value = 50;
 };
 
 #endif
