@@ -30,4 +30,7 @@ tTecla leerTecla()
 	return aux;
 }
 
+bool movementPossible(int x, int y, tTecla dir, tGame_Element **map, const int disp[2]);
+
+
 #endif
