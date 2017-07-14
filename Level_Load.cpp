@@ -12,6 +12,9 @@ void Level::LoadLevel(const int & r, const int & c)
 	std::ifstream file;
 	char aux;
 	tGame_Element aux1;
+	std::stringstream s;
+	std::string content;
+	int j = 0, k = 0, l = 0, disp;
 
 	elem = new tGame_Element * [r];
 	for (int i = 0; i < r; ++i) {
@@ -20,17 +23,27 @@ void Level::LoadLevel(const int & r, const int & c)
 
 	file.open(LEVEL_PATH);
 	if (file.is_open()) {
-		file.get(aux);
-		if (!file.eof()) {
-			for (int i = 0; i < r; ++i) {
-				for (int j = 0; j < c; ++j) {
-					aux1 = CharacterTransform(aux);
-					elem[i][j] = aux1;
-					file.get(aux);
+		s << file.rdbuf();
+		content = s.str();
+		for (int i = 0; i < content.size(); ++i) {
+			aux = content[i];
+			if (aux != '\n') {
+				disp = ENCRYPTION_KEY[l];
+				aux = aux + disp;
+				if (aux > MAX) aux = MIN + (aux - MAX);
+				++l;
+				if (l == ENCRYPTION_KEY.size()) l = 0;
+				aux1 = CharacterTransform(aux);
+				elem[j][k] = aux1;
+				++k;
+				if (k == c) {
+					k = 0;
+					j++;
 				}
 			}
-		}	
+		}
 	}
+
 	file.close();
 }
 
