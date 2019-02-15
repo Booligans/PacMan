@@ -3,6 +3,5 @@
 /Release/
 /Resources/
 *.vcxproj
-*.config
 *.filters
 *.user
