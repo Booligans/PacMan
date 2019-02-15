@@ -1,0 +1,8 @@
+/BoolEngine/
+/Debug/
+/Release/
+/Resources/
+*.vcxproj
+*.config
+*.filters
+*.user
